@@ -1,0 +1,23 @@
+<ion-content [fullscreen]="true">
+  <ion-card *ngFor="let informacion of Facturas">
+    <ion-card-header>
+      <ion-card-title style="color: green;">Factura</ion-card-title>
+      <ion-card-subtitle>Información</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-label><b><i>PRODUCTOS</i></b></ion-label>
+      <div *ngFor="let index of getRange(informacion.Productos.length)">
+        <ion-label>Producto: {{informacion.Productos[index]}}</ion-label><br>
+        <ion-label>Cantidad: {{informacion.Cantidades[index]}} unds</ion-label><br>
+        <ion-label>Descuento: {{informacion.Descuentos[index]}}%</ion-label><br>
+        <ion-label>Costo: ${{informacion.Costos[index]}} pesos</ion-label><br><br>
+      </div>
+      <ion-label>TOTAL: $<b><i>{{informacion.Total}} pesos</i></b></ion-label><br>
+      <ion-label>FECHA: <b><i>{{informacion.Fecha}}</i></b></ion-label>
+    </ion-card-content>
+  
+    <ion-button fill="clear" (click)="Retomar(informacion.id)">Actualizar</ion-button>
+    <ion-button fill="clear" (click)="Drop(informacion.id)">Eliminar</ion-button>
+  </ion-card>
+</ion-content>

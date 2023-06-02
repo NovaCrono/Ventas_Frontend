@@ -1,0 +1,18 @@
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="FormCategoria">
+    <ion-list>
+      <ion-item>
+        <ion-label>Nombre: </ion-label>
+        <ion-input placeholder="Ingrese Nombre" formControlName="Nombre"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-grid class="buton">
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="Registrar()">Registrar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

@@ -1,0 +1,17 @@
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col style="background-color: blue;">Nombre</ion-col>
+      <ion-col style="background-color: green;">Precio</ion-col>
+      <ion-col style="background-color: red;">More Info</ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngFor="let producto of ListaProductos">
+    <ion-row>
+      <ion-col>{{producto.Nombre}}</ion-col>
+      <ion-col>{{producto.Precio}}</ion-col>
+      <a (click)="modal(producto.Categoria_Nombre, producto.Nombre, producto.Detalle, producto.Precio)">...ver más</a>
+    </ion-row>
+  </ion-grid>
+</ion-content>
